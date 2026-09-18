@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向运营、iOS 研发与设计师的 2026 苹果秋季发布会、iOS 27 与 iPhone Duo 调研看板">
+  <title>iOS 27 与 iPhone Duo 跨团队调研看板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-active-role="总览">
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <p id="status-message" class="sr-only" aria-live="polite"></p>
+
+  <header class="site-header" id="overview">
+    <div class="header-inner">
+      <p class="eyebrow">Apple Event · iOS App 研发</p>
+      <h1>2026 苹果秋季发布会<br>iOS 研发适配看板</h1>
+      <p class="lede">把新品与 iOS 27 公告转译为组件适配、视觉主题、系统能力和可执行的研发调研项。</p>
+      <dl class="event-meta">
+        <div><dt>发布会</dt><dd>2026 年 9 月 9 日</dd></div>
+        <div><dt>资料截止</dt><dd>2026 年 9 月 11 日</dd></div>
+        <div><dt>目标技术栈</dt><dd>SwiftUI · UIKit</dd></div>
+        <div><dt>主要环境</dt><dd>iOS 27 · Xcode 27 / 27.1</dd></div>
+      </dl>
+      <p class="source-note">结论仅基于 Apple 官方发布会、Newsroom、Apple Developer 与 Apple Support。部分 iPhone Duo 文档和 Xcode 27.1 工具仍标注为即将提供。</p>
+      <nav class="role-switcher" aria-label="角色视角">
+        <button type="button" data-role="总览" aria-pressed="true">总览</button>
+        <button type="button" data-role="运营" aria-pressed="false">运营</button>
+        <button type="button" data-role="研发" aria-pressed="false">研发</button>
+        <button type="button" data-role="设计" aria-pressed="false">设计</button>
+      </nav>
+      <div class="workspace-session" aria-label="团队协作状态">
+        <span id="sync-status" role="status">登录后可编辑共享 Todo</span>
+        <span id="member-summary" hidden></span>
+        <button id="auth-open" type="button">成员登录</button>
+        <button id="auth-signout" type="button" hidden>退出</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="section-nav" aria-label="章节导航">
+      <nav>
+        <a href="#workspace-summary">协作摘要</a>
+        <a href="#impact">研发影响</a>
+        <a href="#duo-specs">Duo 尺寸</a>
+        <a href="#components">组件</a>
+        <a href="#theme">主题</a>
+        <a href="#system">系统特性</a>
+        <a href="#todos">研发调研清单</a>
+        <a href="#sources">官方资料</a>
+      </nav>
+    </aside>
+
+    <main id="main-content">
+      <section id="workspace-summary" class="workspace-summary" aria-labelledby="workspace-summary-title">
+        <div class="workspace-grid">
+          <div class="workspace-brief">
+            <p class="section-index">团队工作区</p>
+            <h2 id="workspace-summary-title">当前协作视角</h2>
+            <p id="role-summary" aria-live="polite">显示全部已核验结论与团队任务</p>
+            <p>正文事实和官方来源始终一致；视角会更新优先入口与 Todo 范围。</p>
+            <nav id="role-focus-links" class="role-focus-links" aria-label="当前视角优先章节">
+              <span>优先入口</span>
+              <a href="#impact">研发影响</a>
+              <a href="#duo-specs">Duo 尺寸</a>
+              <a href="#todos">研发调研清单</a>
+            </nav>
+          </div>
+          <div id="todo-progress" class="workspace-progress">
+            <div class="progress-header">
+              <h3>团队调研进度</h3>
+              <p id="progress-text">已完成 0 / 22 · 0%</p>
+            </div>
+            <progress id="progress-native" class="progress-track" aria-label="调研任务完成进度" max="22" value="0">0%</progress>
+            <p id="last-updated" class="last-updated">正在读取共享进度</p>
+            <a class="workspace-progress-link" href="#todos">查看研发调研清单</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="duo-specs" aria-labelledby="duo-specs-title">
+        <div class="section-heading">
+          <p class="section-index">00 · 官方尺寸速查</p>
+          <h2 id="duo-specs-title">iPhone Duo 尺寸与交付口径</h2>
+          <p>机身、物理显示和 App Store Connect 截图是三套不同规格；屏幕像素不代表第三方 App 获得了对应的壁纸设置能力。</p>
+        </div>
+
+        <div class="evidence-strip" aria-label="合并文档的证据边界">
+          <div><strong>官方已确认</strong><span>可作为设计基线和开发输入</span></div>
+          <div><strong>需真机 / Beta 验证</strong><span>进入团队 Todo，不作为上线承诺</span></div>
+          <div><strong>未发现公开 API</strong><span>明确产品限制并提供替代方案</span></div>
+        </div>
+
+        <div class="duo-spec-grid">
+          <section aria-labelledby="physical-size-title">
+            <h3 id="physical-size-title">机身与重量</h3>
+            <table class="size-table">
+              <tbody>
+                <tr><th scope="row">展开机身</th><td>164.6 mm × 117.8 mm × 5.2 mm</td></tr>
+                <tr><th scope="row">合上机身</th><td>84.1 mm × 117.8 mm × 11.3 mm</td></tr>
+                <tr><th scope="row">重量</th><td>254 g</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section aria-labelledby="display-size-title">
+            <h3 id="display-size-title">物理显示</h3>
+            <table class="size-table">
+              <tbody>
+                <tr><th scope="row">外屏</th><td>5.4 英寸 OLED<br>1398 × 2034 · 460 ppi</td></tr>
+                <tr><th scope="row">内屏</th><td>7.6 英寸 OLED 折叠屏<br>1878 × 2670 · 430 ppi</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section aria-labelledby="screenshot-size-title">
+            <h3 id="screenshot-size-title">App Store Connect 截图</h3>
+            <table class="size-table">
+              <tbody>
+                <tr><th scope="row">外屏</th><td>1398 × 2034 或 2034 × 1398</td></tr>
+                <tr><th scope="row">内屏</th><td>2007 × 2853 或 2853 × 2007</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <div class="boundary-note">
+          <strong>不能作为产品承诺</strong>
+          <p>截至 2026 年 9 月 11 日，未在 Apple Developer 公开文档中找到 <code>setWallpaperPair()</code>、锁屏组件任意摆放、自由两行布局或第三方移除系统 Now Playing 的支持。设计团队可以制作内外屏双画布与预览，运营不能表述为 App 可直接设置系统双屏壁纸。</p>
+        </div>
+        <p class="source-links"><a href="https://www.apple.com/iphone-duo/specs/" target="_blank" rel="noopener noreferrer">iPhone Duo 技术规格</a><a href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications" target="_blank" rel="noopener noreferrer">App Store Connect 截图规格</a></p>
+      </section>
+
+      <section id="impact" class="impact-section" aria-labelledby="impact-title">
+        <div class="section-heading">
+          <p class="section-index">01 · 先看结论</p>
+          <h2 id="impact-title">研发影响</h2>
+          <p>这场发布会对普通 iOS App 的首要影响不是新硬件参数，而是 iPhone 从固定手机画布走向可折叠、可变尺寸和多显示面。</p>
+        </div>
+        <ol class="impact-list">
+          <li>
+            <strong>先处理启动与布局阻断。</strong>
+            <span>用最新 SDK 构建时，UIKit App 必须采用基于 <code>UIScene</code> 的生命周期；固定屏幕、方向和对称安全区假设都需要审计。</span>
+          </li>
+          <li>
+            <strong>把 iPhone Duo 当作连续尺寸环境。</strong>
+            <span>布局依据 size class、scene bounds 和 safe area 变化，而不是设备型号或横竖屏；标准导航容器会自动适配。</span>
+          </li>
+          <li>
+            <strong>重新检查组件层级与 Liquid Glass。</strong>
+            <span>iOS 27 调整玻璃折射、对比度、字体与栏行为，用户还能改变玻璃外观强度，定制界面不能依赖固定透明度。</span>
+          </li>
+          <li>
+            <strong>把 Siri AI 接入当作 App Intents 工程。</strong>
+            <span>自然语言触达 App 内容与动作的公开路径是 App Intents、实体/意图 schema、View Annotations 和测试框架。</span>
+          </li>
+          <li>
+            <strong>提前准备分发变化。</strong>
+            <span>2027 年 4 月起提交的 iOS/iPadOS App 需要使用 iOS 27 / iPadOS 27 SDK；含社交媒体能力的 App 还需复核年龄分级答案。</span>
+          </li>
+        </ol>
+        <div class="evidence-legend" aria-label="证据状态说明">
+          <h3>证据状态</h3>
+          <ul>
+            <li><span class="status status-announced">发布会已宣布</span><span>发布会或 Newsroom 已确认。</span></li>
+            <li><span class="status status-sdk">SDK 已开放</span><span>已有 Apple Developer API、SDK 行为或技术视频。</span></li>
+            <li><span class="status status-upcoming">文档即将发布</span><span>Apple 明确表示工具或文档稍后提供。</span></li>
+            <li><span class="status status-system">仅系统能力 / 暂无第三方 API</span><span>目前不应承诺 App 可直接集成。</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="components" aria-labelledby="components-title">
+        <div class="section-heading">
+          <p class="section-index">02 · UI 与布局</p>
+          <h2 id="components-title">组件</h2>
+          <p>重点是组件在窗口变宽、设备折叠、系统栏移到侧边以及多显示面同时工作时的行为。</p>
+        </div>
+
+        <div class="feature-list">
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C01</p>
+              <h3>连续尺寸与 Size Class</h3>
+              <div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>iPhone Duo 外屏接近常规 iPhone，内屏横向与纵向均为 regular size class；内屏不遵循 App 声明的 supported interface orientations。App 在 Duo、iPhone Mirroring 和 iPad 上都可能动态改变 scene 尺寸。</dd></div>
+                <div><dt>研发影响</dt><dd>使用 SwiftUI 环境或 UIKit trait collection 决定布局。不要用机型、idiom 或横竖屏推导可用空间；优先让同一信息架构在 compact/regular 间重排。</dd></div>
+                <div><dt>可用性</dt><dd>现有 App 可运行，但使用 iOS 27 与 27.1 SDK 后会逐步获得更完整的边到边和纵向栏布局。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/videos/play/tech-talks/111461/" target="_blank" rel="noopener noreferrer">Apple Developer Tech Talk：Prepare your app for iPhone Duo</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C02</p>
+              <h3>安全区、折痕与 Reserved Region</h3>
+              <div class="status-row"><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>Duo 的安全区可能左右不对称；铰链、相机和系统 UI 会形成 division 或 occlusion reserved regions。iOS 27.1 提供 SwiftUI <code>ReservedRegion</code> 与 UIKit <code>UIViewReservedRegion</code> 相关能力。</dd></div>
+                <div><dt>研发影响</dt><dd>前景交互内容应遵守每一侧的 safe area，背景可延伸到边缘。只在自定义沉浸式布局中查询 reserved regions；标准容器会自动避让。</dd></div>
+                <div><dt>可用性</dt><dd>Xcode 27.1 / iOS 27.1。折叠姿态和 reserved region 必须通过可用性检查与设备能力检测。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/videos/play/tech-talks/111463/" target="_blank" rel="noopener noreferrer">Apple Developer Tech Talk：Strike a pose with adaptive layouts</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C03</p>
+              <h3>纵向工具栏、标签栏与溢出</h3>
+              <div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>iPhone Duo 会把 App 导航和操作移到屏幕侧边，以保留纵向内容空间。系统栏与状态、Live Activities 共用垂直区域，空间不足时项目进入 overflow menu。</dd></div>
+                <div><dt>研发影响</dt><dd>优先使用系统 toolbar/tab bar；为关键动作设置 visibility priority，低频动作放入 overflow。图标优先于长文本，自定义 view 需为横向和纵向表示准备可替代布局。</dd></div>
+                <div><dt>可用性</dt><dd>iOS 27.1 SDK 提供完整纵向栏行为；确有不适配的重度自定义场景才考虑选择退出。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/videos/play/tech-talks/111462/" target="_blank" rel="noopener noreferrer">Apple Developer Tech Talk：Raise the bar with iPhone Duo</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C04</p>
+              <h3>导航、侧边栏与系统呈现</h3>
+              <div class="status-row"><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd><code>NavigationSplitView</code>、<code>UISplitViewController</code>、<code>TabView</code> 与 <code>UITabBarController</code> 可在折叠时收拢，在内屏以平铺或覆盖方式展示。Sheet、Popover、Context Menu 与 Alert 也会避开折痕并调整栏方向。</dd></div>
+                <div><dt>研发影响</dt><dd>先验证系统组件的自动行为，再改自定义布局。内屏可选择 sidebar，以两栏呈现层级和详情；不要为每种姿态复制一套导航树。</dd></div>
+                <div><dt>可用性</dt><dd>iOS 27/27.1 SDK。UIKit 可通过 sidebar availability 判断当前是否能展示侧边栏。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/videos/play/wwdc2026/278/" target="_blank" rel="noopener noreferrer">WWDC26：Modernize your UIKit app</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C05</p>
+              <h3>多显示面与多 Scene</h3>
+              <div class="status-row"><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>iPhone Duo 支持多窗口、多显示面、并排多任务、铰链角度观察和 scene accessory，可让补充内容跨内外屏呈现。</dd></div>
+                <div><dt>研发影响</dt><dd><code>UIScreen.main</code> 在双显示设备上含义不明确并面临弃用风险。应从 <code>windowScene</code> 获取 screen、bounds 与 scale，并保证每个 scene 独立维护状态。</dd></div>
+                <div><dt>可用性</dt><dd>最新 SDK 提供 scene 和 hinge 相关接口；铰链数据适合交互效果，不应代替 safe area/布局 API。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/videos/play/tech-talks/111464/" target="_blank" rel="noopener noreferrer">Apple Developer Tech Talk：Leverage multiple displays and scenes</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C06</p>
+              <h3>Duo 相机与双屏取景</h3>
+              <div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>新相机体验包含内外摄像头、Virtual Front Camera、方向协调器和双显示面预览/控制。系统相机还展示 Kid Cue、Duo FaceTime 与支架式拍摄等设备能力。</dd></div>
+                <div><dt>研发影响</dt><dd>使用 <code>AVCaptureDeviceDirectionCoordinator</code> 跟踪折叠/翻转后的有效相机方向，按实际 preview aspect ratio 布局；不要固定镜头位置或旋转逻辑。</dd></div>
+                <div><dt>可用性</dt><dd>公开 Tech Talk 给出 API 方向；具体 device type 必须运行时检测，系统相机独占体验不能默认向第三方开放。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/videos/play/tech-talks/111465/" target="_blank" rel="noopener noreferrer">Apple Developer Tech Talk：Build a great camera experience</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C07</p>
+              <h3>Dynamic Island 与 Live Activities</h3>
+              <div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>Duo 的 Dynamic Island 位于内外屏侧边并纵向扩展，用于显示 Live Activities 与提醒；iPhone 18 Pro 的 Dynamic Island 也进一步缩小。</dd></div>
+                <div><dt>研发影响</dt><dd>ActivityKit 数据模型继续有效，但需要检查紧凑、最小、扩展和锁屏展示在新几何区域的可读性，不要用固定像素模拟系统岛。</dd></div>
+                <div><dt>可用性</dt><dd>ActivityKit 是公开框架；Duo 具体展示由系统决定。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/documentation/activitykit" target="_blank" rel="noopener noreferrer">ActivityKit 官方文档</a><a href="https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/" target="_blank" rel="noopener noreferrer">iPhone Duo Newsroom</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C08</p>
+              <h3>SwiftUI 组件与交互扩展</h3>
+              <div class="status-row"><span class="status status-sdk">SDK 已开放</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>SwiftUI 新增 toolbar visibility priority、固定低优先级 overflow、导航栏滚动最小化、任意容器重排、任意 ScrollView swipe actions，以及更完整的 Document API。</dd></div>
+                <div><dt>研发影响</dt><dd>高频编辑动作要明确优先级；自定义 List/Grid 拖拽与侧滑可统一到系统行为；文档型 App 可调研异步增量读写和直接磁盘访问。</dd></div>
+                <div><dt>可用性</dt><dd>Xcode 27 与对应 2027 平台 SDK；逐 API 做 availability 隔离。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/swiftui/whats-new/" target="_blank" rel="noopener noreferrer">SwiftUI What's New</a><a href="https://developer.apple.com/documentation/updates/swiftui" target="_blank" rel="noopener noreferrer">SwiftUI Updates</a></p>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title">
+              <p class="feature-number">C09</p>
+              <h3>锁屏 WidgetKit 与系统渲染</h3>
+              <div class="status-row"><span class="status status-sdk">SDK 已开放</span><span class="status status-system">布局由系统决定</span></div>
+            </div>
+            <div class="feature-detail">
+              <dl>
+                <div><dt>功能细节</dt><dd>锁屏使用 WidgetKit 的 accessory widget families。系统会按上下文选择 <code>fullColor</code>、<code>accented</code> 或 <code>vibrant</code> 渲染；App 可读取 <code>widgetRenderingMode</code> 与 <code>isLuminanceReduced</code>，并通过 <code>containerBackgroundRemovable</code> 声明背景是否可移除。</dd></div>
+                <div><dt>研发影响</dt><dd>同一组件要在锁屏、主屏、待机显示与不同强调色下保持信息层级。颜色不能承担唯一语义；背景被移除时仍需可读，AOD 降亮时应减少细节并验证刷新节奏。</dd></div>
+                <div><dt>能力边界</dt><dd>公开 API 支持内容和渲染适配，不支持第三方 App 任意摆放锁屏组件、强制两行自由布局、调整系统玻璃参数或移除系统 Now Playing。</dd></div>
+              </dl>
+              <p class="source-links"><a href="https://developer.apple.com/documentation/widgetkit/preparing-widgets-for-additional-contexts-and-appearances" target="_blank" rel="noopener noreferrer">Preparing widgets for additional contexts and appearances</a><a href="https://developer.apple.com/documentation/widgetkit/optimizing-your-widget-for-accented-rendering-mode-and-liquid-glass" target="_blank" rel="noopener noreferrer">Optimizing widgets for accented rendering and Liquid Glass</a><a href="https://developer.apple.com/documentation/widgetkit/developing-a-widgetkit-strategy" target="_blank" rel="noopener noreferrer">Developing a WidgetKit strategy</a></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="theme" aria-labelledby="theme-title">
+        <div class="section-heading">
+          <p class="section-index">03 · 视觉系统</p>
+          <h2 id="theme-title">主题</h2>
+          <p>iOS 27 延续 Liquid Glass，并把重点从“更透明”调整为更稳定的可读性、适配性和用户控制。</p>
+        </div>
+        <div class="feature-list">
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">T01</p><h3>Liquid Glass 对比度与折射调整</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>iOS 27 通过更均匀的折射和更高对比度提升 Liquid Glass 可读性；系统 App 图标也变得更锐利、细节更多。</dd></div>
+              <div><dt>研发影响</dt><dd>使用系统材质和组件的 App 会自动获得更新。自绘玻璃、固定 blur 值或叠加自定义背景的界面需要重新对比，避免和系统调整互相干扰。</dd></div>
+              <div><dt>可用性</dt><dd>标准组件自动采用；自定义 SwiftUI 视图可使用 <code>glassEffect(_:in:)</code>。</dd></div>
+            </dl><p class="source-links"><a href="https://www.apple.com/os/ios/" target="_blank" rel="noopener noreferrer">iOS 27 官方功能页</a><a href="https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views" target="_blank" rel="noopener noreferrer">Applying Liquid Glass to custom views</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">T02</p><h3>用户可调玻璃外观</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-system">仅系统能力 / 暂无第三方 API</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>系统新增滑杆，让用户在超清晰到完全着色之间调整 Liquid Glass 外观；SwiftUI 标准组件会自动响应。</dd></div>
+              <div><dt>研发影响</dt><dd>不要假设固定透明度、折射强度或背景亮度，也不要把信息含义只编码在玻璃层。应在系统外观变化、浅色/深色、增加对比度和降低透明度下验证。</dd></div>
+              <div><dt>可用性</dt><dd>用户侧设置已宣布；当前引用资料没有提供读取用户滑杆数值的第三方 API。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/videos/play/wwdc2026/269/" target="_blank" rel="noopener noreferrer">WWDC26：What's new in SwiftUI</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">T03</p><h3>界面层与内容层分离</h3><div class="status-row"><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>Apple 建议把导航、标签栏、工具栏和全局动作视为熟悉的系统界面层，把品牌表达集中在下方内容层。</dd></div>
+              <div><dt>研发影响</dt><dd>优先使用原生导航尺寸、位置和交互；品牌色用于有意义的状态或主动作，定制字体需保证动态字号与可读性，自定义组件仍应遵循系统 Sheet、Popover 和边距规律。</dd></div>
+              <div><dt>可用性</dt><dd>设计指导，不要求单一框架。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/videos/play/wwdc2026/251/" target="_blank" rel="noopener noreferrer">WWDC26：Communicate your brand identity on iOS</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">T04</p><h3>自定义 Glass 的边界</h3><div class="status-row"><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>SwiftUI 的 <code>Glass</code> 支持 regular、clear、identity、tint 与 interactive 配置；<code>GlassEffectContainer</code> 可组合并在几何变化时形变。</dd></div>
+              <div><dt>研发影响</dt><dd>仅给浮在内容之上的交互控件使用玻璃，不把整页内容套入玻璃。自定义 tint 必须与文字/图标前景色共同做对比度测试。</dd></div>
+              <div><dt>可用性</dt><dd>公开 SwiftUI API，需要按系统版本提供回退外观。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/documentation/swiftui/glass" target="_blank" rel="noopener noreferrer">SwiftUI Glass 官方文档</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">T05</p><h3>图标、字体与无障碍</h3><div class="status-row"><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>更新后的系统强调更精细图标、清晰命名、可缩放排版和一致的系统符号。VoiceOver、字幕和低视力工具在 iOS 27 也有增强。</dd></div>
+              <div><dt>研发影响</dt><dd>复核 SF Symbols 对齐、图标描边密度、Dynamic Type、VoiceOver 顺序、按钮可访问名称、字幕安全区与 200% 文本缩放。</dd></div>
+              <div><dt>可用性</dt><dd>设计与无障碍能力已公开；系统自动字幕不等同于 App 可跳过自身媒体字幕和无障碍实现。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/design/human-interface-guidelines/accessibility" target="_blank" rel="noopener noreferrer">HIG：Accessibility</a><a href="https://www.apple.com/os/ios/" target="_blank" rel="noopener noreferrer">iOS 27 官方功能页</a></p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="system" aria-labelledby="system-title">
+        <div class="section-heading">
+          <p class="section-index">04 · API 与平台</p>
+          <h2 id="system-title">系统特性</h2>
+          <p>以下内容同时覆盖发布会再次强调的 iOS 27 能力和同期开放的开发者技术，按“可集成”与“仅用户侧”区分。</p>
+        </div>
+        <div class="feature-list">
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S01</p><h3>Siri AI 与 App Intents</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>Siri AI 可利用个人上下文、跨 App 执行动作并理解自然语言。App Intents 新增实体/意图 schema、View Annotations、Spotlight 语义索引和端到端 App Intents Testing。</dd></div>
+              <div><dt>研发影响</dt><dd>盘点可被发现的实体与低风险动作，定义稳定标识、参数、确认和错误结果；敏感或不可逆操作必须保持用户确认。使用测试框架验证真实系统路径。</dd></div>
+              <div><dt>可用性</dt><dd>Siri AI 于 iOS 27 首发时以英语 beta 推出，其他语言与地区分批支持；App Intents API 可按 SDK 文档集成。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/documentation/appintents" target="_blank" rel="noopener noreferrer">App Intents 官方文档</a><a href="https://developer.apple.com/ios/whats-new/" target="_blank" rel="noopener noreferrer">iOS 27 开发者总览</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S02</p><h3>Foundation Models 与多模态</h3><div class="status-row"><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>Foundation Models 统一 Apple 本地模型、兼容的云模型和其他 Language Model provider；多模态 prompt 可包含图片，并可调用 Vision 的 OCR、条码等工具。Dynamic Profiles 可在会话中切换模型、工具和指令。</dd></div>
+              <div><dt>研发影响</dt><dd>先做设备/模型可用性、隐私和降级设计，再建立质量、安全、延迟与成本评估。不要把 Siri AI 的系统个人上下文当作 App 默认可访问数据。</dd></div>
+              <div><dt>可用性</dt><dd>公开 Swift API；具体 Apple Intelligence 模型受设备、语言、地区和服务资格限制。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/documentation/foundationmodels" target="_blank" rel="noopener noreferrer">Foundation Models 官方文档</a><a href="https://developer.apple.com/ios/whats-new/" target="_blank" rel="noopener noreferrer">iOS 27 开发者总览</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S03</p><h3>UIKit Scene 生命周期成为硬要求</h3><div class="status-row"><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>Apple 明确说明：使用最新 iOS 27 SDK 构建时，未采用基于 scene 生命周期的 App 将无法启动。</dd></div>
+              <div><dt>研发影响</dt><dd>把启动、窗口创建、URL/NSUserActivity 处理、状态恢复和前后台事件从 AppDelegate 迁移到 scene 体系，并覆盖多 scene 场景。</dd></div>
+              <div><dt>可用性</dt><dd>构建期强制变化，属于 P0 阻断项。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/documentation/updates/uikit" target="_blank" rel="noopener noreferrer">UIKit Updates</a><a href="https://developer.apple.com/videos/play/wwdc2026/278/" target="_blank" rel="noopener noreferrer">WWDC26：Modernize your UIKit app</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S04</p><h3>SwiftUI 数据流与加载性能</h3><div class="status-row"><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd><code>State</code> 成为宏并让 class 状态在视图生命周期中惰性初始化；<code>ContentBuilder</code> 统一替代多个特定 builder；<code>AsyncImage</code> 默认遵守 HTTP 缓存头并允许定制 request/session。</dd></div>
+              <div><dt>研发影响</dt><dd>先跑 source compatibility 检查，再针对图片缓存、对象初始化次数和编译时间建立基准；不要重复叠加已有图片缓存。</dd></div>
+              <div><dt>可用性</dt><dd>Xcode 27；部分 <code>State</code> 行为回移到较早系统，但仍以官方 availability 为准。</dd></div>
+            </dl><p class="source-links"><a href="https://developer.apple.com/videos/play/wwdc2026/269/" target="_blank" rel="noopener noreferrer">WWDC26：What's new in SwiftUI</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S05</p><h3>系统性能与网络切换</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-system">仅系统能力 / 暂无第三方 API</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>Apple 宣称 iOS 27 的 App 启动最高快 30%、照片库新照片加载最高快 70%、AirDrop 最高快 80%，并改善 Wi-Fi/蜂窝网络切换和 CPU 调度。</dd></div>
+              <div><dt>研发影响</dt><dd>这些是系统上限而非 App 保证。仍需用 MetricKit、Instruments、Network framework 和真实弱网场景测自己的冷启动、内存、重连、幂等与离线恢复。</dd></div>
+              <div><dt>可用性</dt><dd>随 iOS 27 系统提供；没有让第三方直接控制 CPU scheduler 或网络切换策略的公告。</dd></div>
+            </dl><p class="source-links"><a href="https://www.apple.com/os/ios/" target="_blank" rel="noopener noreferrer">iOS 27 官方功能页</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S06</p><h3>儿童安全与 App Store 分级</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-sdk">SDK 已开放</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>iOS 27 增加 Ask to Browse、暴力/血腥内容通信安全、分类 Time Allowances 与 Schedules。Apple Developer 同期要求含社交媒体能力的 App 在 App Store Connect 中如实回答。</dd></div>
+              <div><dt>研发影响</dt><dd>社交、UGC、内置浏览器和消息类 App 需要复核年龄分级、家长控制兼容性、敏感内容流程和相关元数据。</dd></div>
+              <div><dt>可用性</dt><dd>系统功能与分发规则并存；是否有特定 API 要以 Screen Time、Family Controls 和 App Store Connect 文档为准。</dd></div>
+            </dl><p class="source-links"><a href="https://www.apple.com/os/ios/" target="_blank" rel="noopener noreferrer">iOS 27 儿童安全说明</a><a href="https://developer.apple.com/news/?id=tlur8uvi" target="_blank" rel="noopener noreferrer">社交媒体年龄分级问卷公告</a><a href="https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating/" target="_blank" rel="noopener noreferrer">设置 App 年龄分级</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S07</p><h3>Health、GymKit 与可穿戴数据</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-system">仅系统能力 / 暂无第三方 API</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>Apple Watch Series 12/Ultra 4 提供更高频心率和 HRV、readiness score；iPhone 健康 App 将新增 Longevity/Health Age。GymKit 来到 iPhone，可连接兼容有氧器械。</dd></div>
+              <div><dt>研发影响</dt><dd>健康类 App 应检查 HealthKit 是否新增可读/可写 sample type、授权文案、数据频率和地区限制；不能因为系统界面展示某项指标就假定 HealthKit 已开放该字段。</dd></div>
+              <div><dt>可用性</dt><dd>新品和系统能力已宣布；readiness、Health Age 等第三方数据访问需等待 HealthKit 文档确认。</dd></div>
+            </dl><p class="source-links"><a href="https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/" target="_blank" rel="noopener noreferrer">Apple 健康与健身 Newsroom</a><a href="https://developer.apple.com/documentation/healthkit" target="_blank" rel="noopener noreferrer">HealthKit 官方文档</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S08</p><h3>iPhone 18 Pro 相机、性能与连接</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-system">仅系统能力 / 暂无第三方 API</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>iPhone 18 Pro 带来可变光圈 48MP 主摄、A20 Pro 双 16 核 Neural Engine、更高持续性能，以及 Wi-Fi 7、Bluetooth 6、Thread 和新一代蜂窝能力。</dd></div>
+              <div><dt>研发影响</dt><dd>相机、AI、游戏、Matter/配件类 App 应做 capability discovery 和基准测试；不要用型号判断可用格式、光圈控制、网络能力或性能预算。</dd></div>
+              <div><dt>可用性</dt><dd>硬件已宣布；具体 AVCapture、Core AI、Network、Core Bluetooth 与 Matter 能力以运行时 API 和最新 capability 表为准。</dd></div>
+            </dl><p class="source-links"><a href="https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noopener noreferrer">iPhone 18 Pro Newsroom</a></p></div>
+          </article>
+
+          <article class="feature-item">
+            <div class="feature-title"><p class="feature-number">S09</p><h3>AirPods 5 与音频体验</h3><div class="status-row"><span class="status status-announced">发布会已宣布</span><span class="status status-system">仅系统能力 / 暂无第三方 API</span></div></div>
+            <div class="feature-detail"><dl>
+              <div><dt>功能细节</dt><dd>AirPods 5 增强开放式 ANC、Transparency、Adaptive EQ、免手持 Siri AI、头部手势与 Live Translation；iOS 27 还提供 AirPods Custom EQ。</dd></div>
+              <div><dt>研发影响</dt><dd>音频 App 重点验证路由变化、打断恢复、空间音频/蓝牙延迟和 NowPlaying 集成。ANC、系统翻译、EQ 设置和 Siri 头部手势不能默认作为第三方控制接口。</dd></div>
+              <div><dt>可用性</dt><dd>当前属于用户和系统体验；公开集成以 AVAudioSession、Core Bluetooth、NowPlaying 等正式文档为准。</dd></div>
+            </dl><p class="source-links"><a href="https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/" target="_blank" rel="noopener noreferrer">AirPods 5 Newsroom</a><a href="https://developer.apple.com/ios/whats-new/" target="_blank" rel="noopener noreferrer">iOS 27 游戏与媒体能力</a></p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="todos" aria-labelledby="todos-title">
+        <div class="section-heading">
+          <p class="section-index">05 · 行动清单</p>
+          <h2 id="todos-title">研发调研清单</h2>
+          <p>P0 是启动、提交或大面积布局风险；P1 是近期产品与架构机会；P2 是依赖业务场景的专项探索。</p>
+        </div>
+
+        <div class="todo-toolbar">
+          <form id="todo-filters" class="filter-form" aria-label="筛选研发任务">
+            <div class="form-field">
+              <label for="filter-keyword">关键词</label>
+              <input id="filter-keyword" type="search" placeholder="搜索任务、验收标准或技术名词" autocomplete="off">
+            </div>
+            <div class="form-field">
+              <label for="filter-category">分类</label>
+              <select id="filter-category">
+                <option value="all">全部分类</option>
+                <option value="components">组件</option>
+                <option value="theme">主题</option>
+                <option value="system">系统特性</option>
+                <option value="distribution">分发</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="filter-priority">优先级</label>
+              <select id="filter-priority">
+                <option value="all">全部优先级</option>
+                <option value="p0">P0</option>
+                <option value="p1">P1</option>
+                <option value="p2">P2</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="filter-stack">技术栈</label>
+              <select id="filter-stack">
+                <option value="all">全部技术栈</option>
+                <option value="swiftui">SwiftUI</option>
+                <option value="uikit">UIKit</option>
+                <option value="swift">Swift / AI</option>
+                <option value="avfoundation">AVFoundation</option>
+                <option value="healthkit">HealthKit</option>
+                <option value="product">产品 / 合规</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="filter-evidence">证据状态</label>
+              <select id="filter-evidence">
+                <option value="all">全部状态</option>
+                <option value="sdk">SDK 已开放</option>
+                <option value="upcoming">文档即将发布</option>
+                <option value="system">仅系统能力</option>
+              </select>
+            </div>
+          </form>
+          <div class="filter-actions">
+            <label class="check-control" for="filter-incomplete"><input id="filter-incomplete" type="checkbox">仅看未完成</label>
+            <p id="filter-summary">显示 22 项，共 22 项</p>
+            <div class="filter-actions-group">
+              <button id="reset-filters" type="button">重置筛选</button>
+              <button id="reset-progress" class="danger-button" type="button">清除进度</button>
+            </div>
+          </div>
+          <p id="owner-privacy-help" class="owner-privacy-help">负责人显示名会公开展示，请不要填写邮箱或敏感信息。</p>
+        </div>
+
+        <div id="filter-empty" class="empty-state" hidden>
+          <p>没有符合当前条件的任务。</p>
+          <button type="button" data-reset-filters>查看全部任务</button>
+        </div>
+
+        <div class="todo-list" aria-label="研发调研任务">
+          <article class="todo-item" data-task-id="p0-xcode27-smoke" data-priority="p0" data-stack="all" data-category="system" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-xcode27-smoke">
+            <div><label for="task-p0-xcode27-smoke"><strong>P0 · 使用 Xcode 27 RC 与 iOS 27 SDK 冒烟构建</strong></label><p>验收：主 App、扩展、Widget、测试 Target 均能构建和启动；记录全部 warning、崩溃与 source compatibility 问题。</p><a href="https://developer.apple.com/news/releases/?id=09092026h" target="_blank" rel="noopener noreferrer">Xcode 27 RC 发布记录</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-scene-lifecycle" data-priority="p0" data-stack="uikit" data-category="system" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-scene-lifecycle">
+            <div><label for="task-p0-scene-lifecycle"><strong>P0 · 完成 UIScene 生命周期迁移审计</strong></label><p>验收：启动、URL、通知、NSUserActivity、状态恢复及前后台事件均有 scene 路径；最新 SDK 构建可正常启动。</p><a href="https://developer.apple.com/documentation/uikit/scenes" target="_blank" rel="noopener noreferrer">UIKit Scenes</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-screen-assumptions" data-priority="p0" data-stack="all" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-screen-assumptions">
+            <div><label for="task-p0-screen-assumptions"><strong>P0 · 扫描固定屏幕与方向假设</strong></label><p>验收：清点并替换 <code>UIScreen.main</code>、设备 idiom、方向分支、固定宽高及对称 inset 计算。</p><a href="https://developer.apple.com/videos/play/tech-talks/111461/" target="_blank" rel="noopener noreferrer">Prepare your app for iPhone Duo</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-duo-layout-matrix" data-priority="p0" data-stack="all" data-category="components" data-evidence="upcoming">
+            <input type="checkbox" data-edit-control disabled id="task-p0-duo-layout-matrix">
+            <div><label for="task-p0-duo-layout-matrix"><strong>P0 · 建立 iPhone Duo 布局测试矩阵</strong></label><p>验收：覆盖外屏、内屏、横放、半折、翻转、Split View、compact/regular 与动态窗口尺寸，保存缺陷截图。</p><a href="https://developer.apple.com/iphone-duo/" target="_blank" rel="noopener noreferrer">Get ready for iPhone Duo</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-safe-area" data-priority="p0" data-stack="all" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-safe-area">
+            <div><label for="task-p0-safe-area"><strong>P0 · 验证非对称安全区与折痕避让</strong></label><p>验收：所有交互控件位于安全区；背景可正确延展；自定义沉浸式页面不会被 hinge、camera 或系统栏遮挡。</p><a href="https://developer.apple.com/videos/play/tech-talks/111463/" target="_blank" rel="noopener noreferrer">Adaptive layouts on iPhone Duo</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-system-containers" data-priority="p0" data-stack="all" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-system-containers">
+            <div><label for="task-p0-system-containers"><strong>P0 · 回归导航栏、工具栏、侧边栏与系统呈现</strong></label><p>验收：关键动作在纵向栏和 overflow 中仍可达；Sheet、Popover、Menu、Alert 与 Split View 不重叠、不丢状态。</p><a href="https://developer.apple.com/videos/play/tech-talks/111462/" target="_blank" rel="noopener noreferrer">Raise the bar with iPhone Duo</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-liquid-glass" data-priority="p0" data-stack="all" data-category="theme" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-liquid-glass">
+            <div><label for="task-p0-liquid-glass"><strong>P0 · 完成 Liquid Glass 可读性回归</strong></label><p>验收：浅色/深色、玻璃强度两端、增加对比度、降低透明度、Dynamic Type 200% 下文字和控件均清晰。</p><a href="https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views" target="_blank" rel="noopener noreferrer">Liquid Glass 官方文档</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-widget-rendering" data-priority="p0" data-stack="swiftui" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-widget-rendering">
+            <div><label for="task-p0-widget-rendering"><strong>P0 · 回归锁屏 WidgetKit 渲染与 AOD</strong></label><p>验收：覆盖 accessory families、fullColor/accented/vibrant、背景移除、浅深色、强调色和 isLuminanceReduced；文字、图标和状态在真机锁屏及 AOD 下均可读。</p><a href="https://developer.apple.com/documentation/widgetkit/optimizing-your-widget-for-accented-rendering-mode-and-liquid-glass" target="_blank" rel="noopener noreferrer">WidgetKit 渲染优化</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p0-age-rating" data-priority="p0" data-stack="product" data-category="distribution" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p0-age-rating">
+            <div><label for="task-p0-age-rating"><strong>P0 · 复核 App Store 年龄分级答案</strong></label><p>验收：若含社交媒体、UGC、消息或内置浏览能力，产品与合规共同确认最新 App Store Connect 问卷和说明。</p><a href="https://developer.apple.com/news/?id=tlur8uvi" target="_blank" rel="noopener noreferrer">社交媒体年龄分级问卷公告</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-toolbar-priority" data-priority="p1" data-stack="all" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-toolbar-priority">
+            <div><label for="task-p1-toolbar-priority"><strong>P1 · 定义工具栏可见性优先级</strong></label><p>验收：每个主流程明确常驻、可折叠和仅 overflow 动作；窄宽度下撤销、分享、提交等关键动作不丢失。</p><a href="https://developer.apple.com/swiftui/whats-new/" target="_blank" rel="noopener noreferrer">SwiftUI toolbar updates</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-multi-scene" data-priority="p1" data-stack="all" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-multi-scene">
+            <div><label for="task-p1-multi-scene"><strong>P1 · 验证多 Scene 状态隔离</strong></label><p>验收：两个窗口同时编辑或浏览时，导航、草稿、选择和生命周期事件互不覆盖，可分别恢复。</p><a href="https://developer.apple.com/videos/play/tech-talks/111464/" target="_blank" rel="noopener noreferrer">Multiple displays and scenes</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-live-activities" data-priority="p1" data-stack="all" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-live-activities">
+            <div><label for="task-p1-live-activities"><strong>P1 · 回归 Live Activities 全展示族</strong></label><p>验收：锁屏、compact、minimal、expanded 与 Duo 纵向 Dynamic Island 中信息层级、截断和更新节奏符合预期。</p><a href="https://developer.apple.com/documentation/activitykit" target="_blank" rel="noopener noreferrer">ActivityKit</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-app-intents" data-priority="p1" data-stack="all" data-category="system" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-app-intents">
+            <div><label for="task-p1-app-intents"><strong>P1 · 设计 Siri AI 的 App Intents 接入面</strong></label><p>验收：形成实体、动作、权限、确认、错误和隐私清单，并用 App Intents Testing 覆盖至少一个端到端主流程。</p><a href="https://developer.apple.com/documentation/appintents" target="_blank" rel="noopener noreferrer">App Intents</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-foundation-models" data-priority="p1" data-stack="swift" data-category="system" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-foundation-models">
+            <div><label for="task-p1-foundation-models"><strong>P1 · 评估 Foundation Models 用例</strong></label><p>验收：完成设备可用性、离线降级、隐私、延迟、语言、质量和成本矩阵，并以真实数据集跑一次评估。</p><a href="https://developer.apple.com/documentation/foundationmodels" target="_blank" rel="noopener noreferrer">Foundation Models</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-swiftui-compat" data-priority="p1" data-stack="swiftui" data-category="system" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-swiftui-compat">
+            <div><label for="task-p1-swiftui-compat"><strong>P1 · 回归 State 与 ContentBuilder 源码兼容性</strong></label><p>验收：Xcode 27 下构建无新增语义回归；关键 class 状态只初始化一次；自定义 builder 迁移风险有记录。</p><a href="https://developer.apple.com/documentation/updates/swiftui" target="_blank" rel="noopener noreferrer">SwiftUI Updates</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-performance" data-priority="p1" data-stack="all" data-category="system" data-evidence="system">
+            <input type="checkbox" data-edit-control disabled id="task-p1-performance">
+            <div><label for="task-p1-performance"><strong>P1 · 建立 iOS 27 性能与网络基准</strong></label><p>验收：记录冷启动、首屏、滚动、图片加载、内存、弱网切换和重连指标；不直接引用系统宣传百分比作为 App 结果。</p><a href="https://www.apple.com/os/ios/" target="_blank" rel="noopener noreferrer">iOS 27 performance claims</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-camera-duo" data-priority="p1" data-stack="avfoundation" data-category="components" data-evidence="sdk">
+            <input type="checkbox" data-edit-control disabled id="task-p1-camera-duo">
+            <div><label for="task-p1-camera-duo"><strong>P1 · 相机 App 验证 Duo 镜头与方向协调</strong></label><p>验收：运行时发现可用 device type，折叠/翻转后预览方向与比例正确，双屏路径有明确回退。</p><a href="https://developer.apple.com/videos/play/tech-talks/111465/" target="_blank" rel="noopener noreferrer">Camera experience for iPhone Duo</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-duo-wallpaper-template" data-priority="p1" data-stack="product" data-category="theme" data-evidence="system">
+            <input type="checkbox" data-edit-control disabled id="task-p1-duo-wallpaper-template">
+            <div><label for="task-p1-duo-wallpaper-template"><strong>P1 · 输出 Duo 内外屏双画布设计模板</strong></label><p>验收：分别标注外屏物理像素、内屏物理像素和 App Store 截图规格；素材预览不使用固定安全区像素，也不暗示第三方可直接设置系统壁纸。</p><a href="https://www.apple.com/iphone-duo/specs/" target="_blank" rel="noopener noreferrer">iPhone Duo 技术规格</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p1-wallpaper-marketing-boundary" data-priority="p1" data-stack="product" data-category="distribution" data-evidence="system">
+            <input type="checkbox" data-edit-control disabled id="task-p1-wallpaper-marketing-boundary">
+            <div><label for="task-p1-wallpaper-marketing-boundary"><strong>P1 · 修订锁屏组件与双屏壁纸运营口径</strong></label><p>验收：删除“任意摆放”“自由两行”“一键设置内外屏壁纸”等无公开 API 依据的承诺；将能力改写为模板生成、预览与用户手动设置指引。</p><a href="https://developer.apple.com/design/human-interface-guidelines/widgets/" target="_blank" rel="noopener noreferrer">Widgets HIG</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p2-healthkit" data-priority="p2" data-stack="healthkit" data-category="system" data-evidence="system">
+            <input type="checkbox" data-edit-control disabled id="task-p2-healthkit">
+            <div><label for="task-p2-healthkit"><strong>P2 · 核对 HealthKit 新数据可访问性</strong></label><p>验收：对 readiness、HRV 频率、Health Age、GymKit 分别记录公开 sample type、权限、地区与设备要求；未开放项不进入排期。</p><a href="https://developer.apple.com/documentation/healthkit" target="_blank" rel="noopener noreferrer">HealthKit</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p2-audio" data-priority="p2" data-stack="avfoundation" data-category="system" data-evidence="system">
+            <input type="checkbox" data-edit-control disabled id="task-p2-audio">
+            <div><label for="task-p2-audio"><strong>P2 · 回归 AirPods 音频路由与 NowPlaying</strong></label><p>验收：连接切换、ANC/通透切换、电话打断、恢复、后台播放、蓝牙延迟和锁屏信息均通过；不依赖系统 EQ 状态。</p><a href="https://developer.apple.com/documentation/avfaudio/avaudiosession" target="_blank" rel="noopener noreferrer">AVAudioSession</a></div>
+          </article>
+          <article class="todo-item" data-task-id="p2-hardware-capabilities" data-priority="p2" data-stack="all" data-category="system" data-evidence="system">
+            <input type="checkbox" data-edit-control disabled id="task-p2-hardware-capabilities">
+            <div><label for="task-p2-hardware-capabilities"><strong>P2 · 建立 iPhone 18 Pro 能力检测清单</strong></label><p>验收：相机格式、可变光圈、AI、持续性能、Wi-Fi 7、Bluetooth 6 和 Thread 均通过 API 能力判断，而不是硬编码型号。</p><a href="https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noopener noreferrer">iPhone 18 Pro Newsroom</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="sources" aria-labelledby="sources-title">
+        <div class="section-heading">
+          <p class="section-index">06 · 一手证据</p>
+          <h2 id="sources-title">官方资料</h2>
+          <p>按发布会、设备、系统、界面和框架分类。页面内容截至 2026 年 9 月 11 日，后续 beta/RC 文档可能变化。</p>
+        </div>
+        <div class="source-groups">
+          <section aria-labelledby="source-event"><h3 id="source-event">发布会与设备</h3><ul>
+            <li><a href="https://www.apple.com/apple-events/" target="_blank" rel="noopener noreferrer">Apple Events：September 9, 2026</a></li>
+            <li><a href="https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/" target="_blank" rel="noopener noreferrer">Apple unveils iPhone Duo</a></li>
+            <li><a href="https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/" target="_blank" rel="noopener noreferrer">Apple debuts iPhone 18 Pro and iPhone 18 Pro Max</a></li>
+            <li><a href="https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/" target="_blank" rel="noopener noreferrer">Apple introduces AirPods 5</a></li>
+            <li><a href="https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/" target="_blank" rel="noopener noreferrer">Introducing Apple Watch Series 12</a></li>
+            <li><a href="https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/" target="_blank" rel="noopener noreferrer">Apple unveils Apple Watch Ultra 4</a></li>
+            <li><a href="https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/" target="_blank" rel="noopener noreferrer">Apple advances health and fitness capabilities</a></li>
+          </ul></section>
+          <section aria-labelledby="source-duo"><h3 id="source-duo">iPhone Duo 适配</h3><ul>
+            <li><a href="https://developer.apple.com/iphone-duo/" target="_blank" rel="noopener noreferrer">Get ready for iPhone Duo</a></li>
+            <li><a href="https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo" target="_blank" rel="noopener noreferrer">HIG：Designing for iPhone Duo</a></li>
+            <li><a href="https://developer.apple.com/videos/play/tech-talks/111461/" target="_blank" rel="noopener noreferrer">Prepare your app for iPhone Duo</a></li>
+            <li><a href="https://developer.apple.com/videos/play/tech-talks/111462/" target="_blank" rel="noopener noreferrer">Raise the bar with iPhone Duo</a></li>
+            <li><a href="https://developer.apple.com/videos/play/tech-talks/111463/" target="_blank" rel="noopener noreferrer">Strike a pose with adaptive layouts</a></li>
+            <li><a href="https://developer.apple.com/videos/play/tech-talks/111464/" target="_blank" rel="noopener noreferrer">Leverage multiple displays and scenes</a></li>
+            <li><a href="https://developer.apple.com/videos/play/tech-talks/111465/" target="_blank" rel="noopener noreferrer">Build a great camera experience</a></li>
+            <li><a href="https://developer.apple.com/videos/play/tech-talks/111466/" target="_blank" rel="noopener noreferrer">Design for iPhone Duo</a></li>
+          </ul></section>
+              <section aria-labelledby="source-platform"><h3 id="source-platform">iOS 27 与界面</h3><ul>
+            <li><a href="https://www.apple.com/os/ios/" target="_blank" rel="noopener noreferrer">iOS 27 官方功能页</a></li>
+            <li><a href="https://developer.apple.com/ios/whats-new/" target="_blank" rel="noopener noreferrer">What's new in iOS 27</a></li>
+            <li><a href="https://developer.apple.com/swiftui/whats-new/" target="_blank" rel="noopener noreferrer">What's new in SwiftUI</a></li>
+            <li><a href="https://developer.apple.com/videos/play/wwdc2026/269/" target="_blank" rel="noopener noreferrer">WWDC26：What's new in SwiftUI</a></li>
+            <li><a href="https://developer.apple.com/videos/play/wwdc2026/278/" target="_blank" rel="noopener noreferrer">WWDC26：Modernize your UIKit app</a></li>
+            <li><a href="https://developer.apple.com/videos/play/wwdc2026/251/" target="_blank" rel="noopener noreferrer">WWDC26：Communicate your brand identity on iOS</a></li>
+                <li><a href="https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views" target="_blank" rel="noopener noreferrer">Applying Liquid Glass to custom views</a></li>
+                <li><a href="https://developer.apple.com/design/human-interface-guidelines/widgets/" target="_blank" rel="noopener noreferrer">Widgets HIG</a></li>
+                <li><a href="https://developer.apple.com/documentation/widgetkit/preparing-widgets-for-additional-contexts-and-appearances" target="_blank" rel="noopener noreferrer">WidgetKit contexts and appearances</a></li>
+                <li><a href="https://developer.apple.com/documentation/widgetkit/optimizing-your-widget-for-accented-rendering-mode-and-liquid-glass" target="_blank" rel="noopener noreferrer">WidgetKit accented rendering and Liquid Glass</a></li>
+                <li><a href="https://developer.apple.com/documentation/widgetkit/developing-a-widgetkit-strategy" target="_blank" rel="noopener noreferrer">Developing a WidgetKit strategy</a></li>
+          </ul></section>
+          <section aria-labelledby="source-frameworks"><h3 id="source-frameworks">框架与分发</h3><ul>
+            <li><a href="https://developer.apple.com/documentation/updates/swiftui" target="_blank" rel="noopener noreferrer">SwiftUI Updates</a></li>
+            <li><a href="https://developer.apple.com/documentation/updates/uikit" target="_blank" rel="noopener noreferrer">UIKit Updates</a></li>
+            <li><a href="https://developer.apple.com/documentation/foundationmodels" target="_blank" rel="noopener noreferrer">Foundation Models</a></li>
+            <li><a href="https://developer.apple.com/documentation/appintents" target="_blank" rel="noopener noreferrer">App Intents</a></li>
+            <li><a href="https://developer.apple.com/documentation/activitykit" target="_blank" rel="noopener noreferrer">ActivityKit</a></li>
+            <li><a href="https://developer.apple.com/documentation/healthkit" target="_blank" rel="noopener noreferrer">HealthKit</a></li>
+            <li><a href="https://developer.apple.com/news/releases/?id=09092026h" target="_blank" rel="noopener noreferrer">Xcode 27 RC 发布记录</a></li>
+            <li><a href="https://developer.apple.com/app-store/submitting/" target="_blank" rel="noopener noreferrer">2027 年 4 月 SDK 最低要求</a></li>
+            <li><a href="https://developer.apple.com/news/?id=tlur8uvi" target="_blank" rel="noopener noreferrer">社交媒体年龄分级问卷公告</a></li>
+            <li><a href="https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating/" target="_blank" rel="noopener noreferrer">设置 App 年龄分级</a></li>
+          </ul></section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>非 Apple 官方页面。本页用于内部技术调研，结论应随 SDK、Release Notes 与 HIG 更新复核。</p>
+  </footer>
+
+  <dialog id="auth-dialog" aria-labelledby="auth-title">
+    <form id="auth-form">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">受邀成员</p>
+          <h2 id="auth-title">登录团队工作区</h2>
+        </div>
+        <button id="auth-close" class="icon-button" type="button" aria-label="关闭登录窗口">×</button>
+      </div>
+      <label class="form-field" for="auth-email">
+        <span>邮箱</span>
+        <input id="auth-email" name="email" type="email" autocomplete="email" required>
+      </label>
+      <p id="auth-feedback" class="dialog-feedback" aria-live="polite"></p>
+      <button id="auth-submit" class="primary-button" type="submit">发送登录链接</button>
+    </form>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.111.0" integrity="sha384-fPWur1rx/DE6YtXP/x0MD6dd90RgnVsz5yX/DIg7CcVAnTBZsENWuIcpvVTM39ti" crossorigin="anonymous"></script>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向海外市场的 iOS 主题类 App 订阅增长运营工作文档">
+  <title>iPhone Duo 海外订阅增长运营工作台</title>
+  <link rel="stylesheet" href="operations.css">
+</head>
+<body data-view="全部">
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <p id="status-message" class="sr-only" role="status" aria-live="polite"></p>
+
+  <header id="command" class="command-board">
+    <div class="command-heading">
+      <p class="eyebrow">海外市场 · 资料截止 2026-09-15</p>
+      <h1>iPhone Duo 订阅增长指挥板</h1>
+      <p class="priority-line"><strong>订阅付费优先</strong>：订阅付费第一，社媒增长第二。社媒运营、买量和内容运营必须共同对下游订阅质量负责。</p>
+      <nav id="view-switcher" class="view-switcher" aria-label="运营视图">
+        <button type="button" data-view="全部" aria-pressed="true">全部</button>
+        <button type="button" data-view="社媒" aria-pressed="false">社媒</button>
+        <button type="button" data-view="买量" aria-pressed="false">买量</button>
+        <button type="button" data-view="内容" aria-pressed="false">内容</button>
+        <button type="button" data-view="跨团队需求" aria-pressed="false">跨团队需求</button>
+      </nav>
+    </div>
+
+    <section class="north-star" aria-labelledby="north-star-title">
+      <h2 id="north-star-title">北极星指标</h2>
+      <dl class="metric-strip">
+        <div><dt>净订阅收入</dt><dd>主目标</dd></div>
+        <div><dt>Paid CAC</dt><dd>按国家与渠道</dd></div>
+        <div><dt>D7 Download-to-Paid</dt><dd>质量门槛</dd></div>
+        <div><dt>试用转付费</dt><dd>付费墙质量</dd></div>
+        <div><dt>订阅留存</dt><dd>D35 cohort</dd></div>
+      </dl>
+      <p class="supporting-metrics"><strong>辅助指标：</strong>展示、首帧停留、点击率、商店页转化、安装到试用、社媒保存 / 分享、粉丝净增长。</p>
+      <p class="source-note"><strong>口径：</strong>广告平台数据用于素材与投放诊断，订阅与净收入以 App Store Connect 和财务回传为准；不同平台归因窗口不得直接混算。</p>
+    </section>
+
+    <section class="weekly-actions" aria-labelledby="weekly-actions-title">
+      <h2 id="weekly-actions-title">本周动作</h2>
+      <ol>
+        <li><strong>产品：</strong>冻结 Duo 双画布预览、主题详情 deep link 与付费墙承接路径。</li>
+        <li><strong>内容：</strong>交付 4 个钩子概念，每个概念至少 3 个单变量版本。</li>
+        <li><strong>买量：</strong>建立国家 × 渠道 × 素材 × 商店页测试表，不跨口径比较。</li>
+        <li><strong>数据：</strong>验收曝光、点击、安装、试用、付费与净收入链路。</li>
+      </ol>
+      <h3>漏斗速决</h3>
+      <dl class="command-decisions">
+        <div><dt>全链路达线</dt><dd>放量</dd></div>
+        <div><dt>样本不足</dt><dd>继续测试</dd></div>
+        <div><dt>停留差</dt><dd>换钩子</dd></div>
+        <div><dt>点击好、安装差</dt><dd>修商店页</dd></div>
+        <div><dt>安装好、试用差</dt><dd>修付费墙</dd></div>
+        <div><dt>1.5 倍目标 CAC 无付费</dt><dd>暂停</dd></div>
+      </dl>
+    </section>
+
+    <figure class="duo-signal">
+      <img src="assets/apple-iphone-duo-display-sizes.jpg" alt="苹果 iPhone Duo 展开与合上时的内外屏尺寸示意" loading="eager">
+      <figcaption>
+        iPhone Duo 产品信号：5.4 英寸外屏、7.6 英寸内屏，内外屏采用相同宽高比；2026 年 10 月 16 日预购，10 月 23 日发售。来源：
+        <a href="https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/" target="_blank" rel="noopener noreferrer">Apple Newsroom</a>。
+      </figcaption>
+    </figure>
+
+    <aside class="fact-boundary" aria-labelledby="fact-boundary-title">
+      <h2 id="fact-boundary-title">事实边界</h2>
+      <p><strong>官方事实：</strong>Apple 已确认 5.4 英寸外屏与 7.6 英寸内屏，内外屏采用相同宽高比，并支持 Always On 与 StandBy。</p>
+      <p><strong>运营启示：</strong>可围绕双形态视觉和连续体验创作，但不得把创意推导写成 Apple 产品声明。</p>
+      <p><strong>运营假设：</strong>钩子、首轮操作线和素材节奏用于冷启动，必须由团队数据替换。</p>
+      <p><strong>研发待验证：</strong>Apple 未公开壁纸一键设置接口。不能承诺第三方 App 一键设置内外屏壁纸组合，也不能承诺为两块屏幕独立设置动态系统壁纸；只能准确表达预览、匹配素材与分步安装指导。</p>
+      <p class="source-note">公开传播仅使用 Apple 已确认的硬件与系统事实；具体第三方 App 流程以上线版本和真机验收为准。</p>
+    </aside>
+  </header>
+
+  <div class="page-shell">
+    <aside class="section-nav" aria-label="工作台章节">
+      <nav>
+        <a href="#command">增长指挥板</a>
+        <a href="#calendar">时效日历</a>
+        <a href="#hooks">钩子库</a>
+        <a href="#channels">渠道打法</a>
+        <a href="#benchmarks">对表基准</a>
+        <a href="#scenarios">应用场景</a>
+        <a href="#requirements">运营需求</a>
+        <a href="#sources">官方来源</a>
+      </nav>
+    </aside>
+
+    <main id="main-content">
+      <section id="calendar" data-view-group="社媒 买量 内容" aria-labelledby="calendar-title">
+        <div class="section-heading">
+          <p class="section-index">01 · 上市节奏</p>
+          <h2 id="calendar-title">时效作战日历</h2>
+          <p>T0 对应 2026 年 10 月 23 日发售；T-7 对应 10 月 16 日预购，也是第一轮搜索与内容峰值。每个阶段同时规定目标、动作、资产和失效条件。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>预购、发售与常青内容的运营节奏</caption>
+            <thead>
+              <tr><th scope="col">阶段</th><th scope="col">目标</th><th scope="col">社媒动作</th><th scope="col">买量动作</th><th scope="col">内容资产</th><th scope="col">时效 / 失效条件</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">T-30 ~ T-14（9 月 23 日–10 月 9 日）</th><td>建立新品心智与候补池</td><td>发布折叠形态审美提问、概念预览；收集评论语言</td><td>小预算测试视觉反差与身份表达，不优化购买量</td><td>Duo 尺寸母版、20 个首帧、候补页</td><td>10 月 9 日结束；参数口径变化或官方素材更新即替换，不得展示未验证设置流程</td></tr>
+              <tr><th scope="row">T-13 ~ T-7（10 月 10 日–10 月 16 日）</th><td>验证功能意图与搜索词，承接预购日热度</td><td>创作者演示双画布预览、StandBy 和组件组合</td><td>拆分 Duo、壁纸、Widget 搜索意图；准备商店页变体</td><td>15 秒演示、FAQ、创作者授权包、预购日套件</td><td>10 月 16 日预购完成首轮搜索与内容峰值承接；低停留概念连续两轮未改善即停</td></tr>
+              <tr><th scope="row">T-6 ~ T-1（10 月 17 日–10 月 22 日）</th><td>把预购热度转成发售候补与高意图访问</td><td>发售倒计时、尺寸说明、首发主题包预览</td><td>提高高意图词覆盖，校准广告与商店页承诺</td><td>发售倒计时套件、产品页截图、评论回复库</td><td>10 月 22 日结束；发售前仅用预览与已确认事实，10 月 23 日转入 T0 真机口径</td></tr>
+              <tr><th scope="row">T0 ~ T+3（10 月 23 日–10 月 26 日）</th><td>抢占 10 月 23 日发售窗口</td><td>真实设备演示、开箱场景、集中答疑，每日两轮复盘</td><td>最高密度测试首帧、CTA 与承接页；守住目标 CAC</td><td>真机录屏、安装教程、商店页事件素材</td><td>10 月 26 日结束；只用已验收功能，单素材达 1.5 倍目标 CAC 无付费即暂停</td></tr>
+              <tr><th scope="row">T+4 ~ T+14（10 月 27 日–11 月 6 日）</th><td>把热点转成教程与用户证明</td><td>用户作品、失败修正、主题合集、创作者二创</td><td>放量下游质量稳定的胜出项，拆分国家与版位</td><td>教程系列、用户案例、胜出素材衍生版</td><td>11 月 6 日结束；连续 3 天频次升高且停留或 CTR 跌 20% 时刷新</td></tr>
+              <tr><th scope="row">T+15 ~ T+30（11 月 7 日–11 月 22 日）</th><td>沉淀 SEO、ASO 与细分场景</td><td>节日主题、桌面场景、审美人群系列</td><td>缩减节点词，保留付费质量达标的常青组合</td><td>场景落地页、节日包、长尾搜索素材</td><td>11 月 22 日结束；节点用语到期下线，所有日期型广告完成归档</td></tr>
+              <tr><th scope="row">常青（自 11 月 23 日起）</th><td>证明订阅持续价值</td><td>每周更新、身份表达、组件搭配、前后对比</td><td>按四周中位数常态化测试与刷新</td><td>主题日历、每周上新、订阅内容预告</td><td>内容更新停止、素材证明过期或付费质量跌破预警线即停</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="source-note">预购与发售日期属于 Apple 官方事实；阶段划分、发布频率、预算切换和停止条件属于运营假设，首发后按同分组数据调整。</p>
+      </section>
+
+      <section id="hooks" data-view-group="社媒 买量 内容" aria-labelledby="hooks-title">
+        <div class="section-heading">
+          <p class="section-index">02 · 可复制创意</p>
+          <h2 id="hooks-title">社媒与买量钩子库</h2>
+          <p>复制按钮仅承载纯英文广告行；中文说明、证明要求和营销边界不会进入复制文本。</p>
+        </div>
+
+        <form class="hook-filters" aria-label="钩子筛选">
+          <div><label for="hook-channel">渠道</label><select id="hook-channel" name="channel"><option>全部</option><option>TikTok</option><option>Meta</option><option>YouTube</option><option>Apple Ads</option><option>多渠道</option></select></div>
+          <div><label for="hook-timing">时效</label><select id="hook-timing" name="timing"><option>全部</option><option>T-30</option><option>T-7</option><option>T0</option><option>T+4</option><option>常青</option></select></div>
+          <div><label for="hook-scenario">场景</label><select id="hook-scenario" name="scenario"><option>全部</option><option>Duo</option><option>StandBy</option><option>组件</option><option>主题</option><option>订阅</option></select></div>
+          <p id="hook-count" role="status" aria-live="polite">显示 14 条钩子</p>
+        </form>
+        <p id="hook-empty" role="status" aria-live="polite" hidden>没有符合当前筛选条件的钩子。</p>
+
+        <div class="hook-list">
+          <article class="hook-item" data-channel="TikTok" data-timing="T0" data-scenario="Duo">
+            <header><span>H01 · 视觉反差</span><h3>一开一合，两种画面</h3></header>
+            <p class="ad-line" lang="en">One phone. Two moods. See the Duo theme match.</p>
+            <button type="button" data-copy-text="One phone. Two moods. See the Duo theme match." aria-label="复制 H01 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>前三帧依次展示合上、展开与主题匹配预览。</dd></div><div><dt>适用阶段</dt><dd>T0 发售实机窗口。</dd></div><div><dt>素材证明</dt><dd>真实 App 双画布预览录屏与素材尺寸标记。</dd></div><div><dt>CTA</dt><dd>查看匹配素材。</dd></div><div><dt>营销边界</dt><dd>不声称自动应用到两块系统屏幕。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="Meta" data-timing="T-30" data-scenario="主题">
+            <header><span>H02 · 系统新鲜</span><h3>为新系统准备新视觉</h3></header>
+            <p class="ad-line" lang="en">A fresh screen deserves a fresh theme.</p>
+            <button type="button" data-copy-text="A fresh screen deserves a fresh theme." aria-label="复制 H02 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>用系统升级前后的审美变化制造新鲜感。</dd></div><div><dt>适用阶段</dt><dd>T-30 概念教育。</dd></div><div><dt>素材证明</dt><dd>已上架主题预览与准确系统版本标签。</dd></div><div><dt>CTA</dt><dd>预览新主题。</dd></div><div><dt>营销边界</dt><dd>不暗示 Apple 官方合作或系统独占能力。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="YouTube" data-timing="T-7" data-scenario="组件">
+            <header><span>H03 · 痛点修复</span><h3>杂乱锁屏变成一套</h3></header>
+            <p class="ad-line" lang="en">Your lock screen can finally feel put together.</p>
+            <button type="button" data-copy-text="Your lock screen can finally feel put together." aria-label="复制 H03 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>先呈现风格冲突，再展示壁纸与组件组合预览。</dd></div><div><dt>适用阶段</dt><dd>T-7 教程意图。</dd></div><div><dt>素材证明</dt><dd>同一设备上的前后对比和分步安装指导。</dd></div><div><dt>CTA</dt><dd>查看搭配步骤。</dd></div><div><dt>营销边界</dt><dd>不承诺任意摆放锁屏组件。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="TikTok" data-timing="常青" data-scenario="主题">
+            <header><span>H04 · 身份表达</span><h3>手机也是穿搭的一部分</h3></header>
+            <p class="ad-line" lang="en">Dress your screen like it belongs to you.</p>
+            <button type="button" data-copy-text="Dress your screen like it belongs to you." aria-label="复制 H04 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>按极简、复古和高饱和人群展示三种身份。</dd></div><div><dt>适用阶段</dt><dd>常青获客。</dd></div><div><dt>素材证明</dt><dd>可在 App 内查到的完整主题套装。</dd></div><div><dt>CTA</dt><dd>找到你的风格。</dd></div><div><dt>营销边界</dt><dd>只展示真实可下载素材。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="Meta" data-timing="T+4" data-scenario="主题">
+            <header><span>H05 · 模板效率</span><h3>一次选齐整套视觉</h3></header>
+            <p class="ad-line" lang="en">Pick one look and match the whole screen.</p>
+            <button type="button" data-copy-text="Pick one look and match the whole screen." aria-label="复制 H05 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>展示从主题包到壁纸、组件素材的选择路径。</dd></div><div><dt>适用阶段</dt><dd>T+4 教程放量。</dd></div><div><dt>素材证明</dt><dd>计时录屏与主题包实际内容。</dd></div><div><dt>CTA</dt><dd>预览整套模板。</dd></div><div><dt>营销边界</dt><dd>不以“一键设置系统主题”描述多步流程。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="TikTok" data-timing="T-7" data-scenario="主题">
+            <header><span>H06 · 收藏价值</span><h3>先收藏，拿到新机再搭</h3></header>
+            <p class="ad-line" lang="en">Save this setup for your new phone day.</p>
+            <button type="button" data-copy-text="Save this setup for your new phone day." aria-label="复制 H06 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>用清单式画面提高收藏与回访。</dd></div><div><dt>适用阶段</dt><dd>T-7 预购期。</dd></div><div><dt>素材证明</dt><dd>明确列出可领取的壁纸和组件素材。</dd></div><div><dt>CTA</dt><dd>收藏并预览。</dd></div><div><dt>营销边界</dt><dd>不制造库存或名额稀缺。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="YouTube" data-timing="T+4" data-scenario="Duo">
+            <header><span>H07 · 教程结果</span><h3>从双画布到安装结果</h3></header>
+            <p class="ad-line" lang="en">Preview the pair. Follow the steps. Make it yours.</p>
+            <button type="button" data-copy-text="Preview the pair. Follow the steps. Make it yours." aria-label="复制 H07 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>先展示结果，再用三步回放真实流程。</dd></div><div><dt>适用阶段</dt><dd>T+4 问题承接。</dd></div><div><dt>素材证明</dt><dd>真机流程与分步安装指导。</dd></div><div><dt>CTA</dt><dd>查看完整步骤。</dd></div><div><dt>营销边界</dt><dd>不能剪掉需要用户完成的系统步骤。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="多渠道" data-timing="T0" data-scenario="Duo">
+            <header><span>H08 · 节点</span><h3>发售日首屏</h3></header>
+            <p class="ad-line" lang="en">Duo day is here. Start with a screen that fits both views.</p>
+            <button type="button" data-copy-text="Duo day is here. Start with a screen that fits both views." aria-label="复制 H08 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>只在发售窗口使用日期与新品语境。</dd></div><div><dt>适用阶段</dt><dd>T0 至 T+3。</dd></div><div><dt>素材证明</dt><dd>发售日期、真实预览和尺寸匹配说明。</dd></div><div><dt>CTA</dt><dd>查看 Duo 素材。</dd></div><div><dt>营销边界</dt><dd>到期立即移除“今天”和“首发”用语。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="TikTok" data-timing="T+4" data-scenario="主题">
+            <header><span>H09 · 创作者证明</span><h3>由创作者展示真实搭配</h3></header>
+            <p class="ad-line" lang="en">See how a creator built this complete screen look.</p>
+            <button type="button" data-copy-text="See how a creator built this complete screen look." aria-label="复制 H09 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>保留创作者过程、署名和实际评价。</dd></div><div><dt>适用阶段</dt><dd>T+4 用户证明。</dd></div><div><dt>素材证明</dt><dd>有效授权、真实录屏与内容清单。</dd></div><div><dt>CTA</dt><dd>浏览创作者模板。</dd></div><div><dt>营销边界</dt><dd>不得改写评价或伪造使用结果。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="Meta" data-timing="常青" data-scenario="订阅">
+            <header><span>H10 · 订阅持续价值</span><h3>订阅不是一次下载</h3></header>
+            <p class="ad-line" lang="en">A new screen collection is waiting every week.</p>
+            <button type="button" data-copy-text="A new screen collection is waiting every week." aria-label="复制 H10 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>连续展示四周真实上新，证明内容供给。</dd></div><div><dt>适用阶段</dt><dd>常青付费转化。</dd></div><div><dt>素材证明</dt><dd>上新日历、实际数量与可见内容。</dd></div><div><dt>CTA</dt><dd>查看本周上新。</dd></div><div><dt>营销边界</dt><dd>频率和数量必须与实际运营能力一致。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="YouTube" data-timing="常青" data-scenario="StandBy">
+            <header><span>H11 · StandBy</span><h3>把充电时间变成桌面场景</h3></header>
+            <p class="ad-line" lang="en">Turn charging time into a screen worth seeing.</p>
+            <button type="button" data-copy-text="Turn charging time into a screen worth seeing." aria-label="复制 H11 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>展示床头、书桌与厨房三类真实摆放。</dd></div><div><dt>适用阶段</dt><dd>常青场景教育。</dd></div><div><dt>素材证明</dt><dd>Apple 已确认 StandBy，素材展示真实兼容结果。</dd></div><div><dt>CTA</dt><dd>预览 StandBy 搭配。</dd></div><div><dt>营销边界</dt><dd>不声称 App 控制系统 Always On 行为。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="TikTok" data-timing="常青" data-scenario="组件">
+            <header><span>H12 · Widget</span><h3>一个信息位也能保持风格</h3></header>
+            <p class="ad-line" lang="en">Make every Widget feel part of the same look.</p>
+            <button type="button" data-copy-text="Make every Widget feel part of the same look." aria-label="复制 H12 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>以实际 Widget 尺寸展示信息与主题统一。</dd></div><div><dt>适用阶段</dt><dd>常青功能意图。</dd></div><div><dt>素材证明</dt><dd>已支持组件类型与系统渲染实拍。</dd></div><div><dt>CTA</dt><dd>查看组件组合。</dd></div><div><dt>营销边界</dt><dd>不承诺任意尺寸、位置或系统级交互。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="Meta" data-timing="T-30" data-scenario="主题">
+            <header><span>H13 · Liquid Glass</span><h3>用素材呼应系统视觉</h3></header>
+            <p class="ad-line" lang="en">Meet the new glass look with a theme made to match.</p>
+            <button type="button" data-copy-text="Meet the new glass look with a theme made to match." aria-label="复制 H13 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>展示主题与 Liquid Glass 界面的视觉呼应。</dd></div><div><dt>适用阶段</dt><dd>T-30 系统新鲜期。</dd></div><div><dt>素材证明</dt><dd>真机或正式系统录屏与主题预览。</dd></div><div><dt>CTA</dt><dd>预览匹配主题。</dd></div><div><dt>营销边界</dt><dd>不得描述为修改、替换或控制系统材质。</dd></div></dl>
+          </article>
+
+          <article class="hook-item" data-channel="Apple Ads" data-timing="T0" data-scenario="Duo">
+            <header><span>H14 · App Store 搜索承接</span><h3>把高意图搜索接到真实能力</h3></header>
+            <p class="ad-line" lang="en">Find wallpapers and Widgets designed to match your Duo look.</p>
+            <button type="button" data-copy-text="Find wallpapers and Widgets designed to match your Duo look." aria-label="复制 H14 广告行">复制广告行</button>
+            <dl><div><dt>中文用法</dt><dd>关键词、广告素材和产品页首屏使用同一价值主张。</dd></div><div><dt>适用阶段</dt><dd>T0 搜索峰值。</dd></div><div><dt>素材证明</dt><dd>对应 Custom Product Page 的真实截图。</dd></div><div><dt>CTA</dt><dd>查看壁纸与组件。</dd></div><div><dt>营销边界</dt><dd>不购买或使用会暗示系统原生能力的误导词。</dd></div></dl>
+          </article>
+        </div>
+        <p class="source-note">广告行是运营假设，不是 Apple 或平台背书；发布前必须同时通过素材证明、商店页一致性和能力声明检查。</p>
+      </section>
+
+      <section id="channels" data-view-group="社媒 买量 内容" aria-labelledby="channels-title">
+        <div class="section-heading">
+          <p class="section-index">03 · 分发与复制</p>
+          <h2 id="channels-title">渠道打法与素材复制系统</h2>
+          <p>每个渠道承担不同漏斗角色，平台指标只在其官方定义和归因窗口内比较。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>海外渠道角色、测试节奏与停止条件</caption>
+            <thead><tr><th scope="col">渠道</th><th scope="col">渠道角色</th><th scope="col">推荐格式</th><th scope="col">测试单元</th><th scope="col">发布 / 优化节奏</th><th scope="col">核心指标</th><th scope="col">停止条件</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">TikTok Organic / TikTok Ads</th><td>发现、评论语言采集与首帧验证；胜出概念进入付费扩量</td><td>原生 9:16、有声；TikTok 支持 15 秒至 3 分钟，首轮 15–20 秒为运营假设；人物或手势先出现</td><td>1 个钩子 × 3 个首帧 × 2 个 CTA</td><td>自然内容每日 1–2 条；广告每 48 小时按样本检查</td><td>2 秒停留、完播、分享收藏、CTR、Paid CAC</td><td>到样本门槛仍低于预警线，或 1.5 倍目标 CAC 无付费</td></tr>
+              <tr><th scope="row">Instagram Reels / Meta Ads</th><td>视觉证明、再营销与跨版位规模化</td><td>Meta 官方建议 9:16、有声，关键信息在安全区；图片补齐 1:1 与 4:5</td><td>1 个概念 × Reels/Stories × 2 个受众</td><td>每周两批新概念；预算调整后观察完整归因窗口</td><td>3 秒停留、Link CTR、CVR、试用与 Paid CAC</td><td>停留达标但点击连续两批失效，或下游质量显著下降</td></tr>
+              <tr><th scope="row">YouTube Shorts / Google App Campaigns</th><td>教程搜索前置与跨库存获取高意图安装</td><td>Shorts 9:16；Google App Campaigns 提交横竖视频、图片与文本，保证资产多样性并配置 deep link</td><td>每个主题至少 2 视频、2 图片组、2 文本组</td><td>每周补资产；学习期内不频繁改目标与预算</td><td>观看、安装、目标内行动、付费、价值回传</td><td>资产评级长期低且新增变体无改善，或目标内行动成本失控</td></tr>
+              <tr><th scope="row">Apple Ads</th><td>承接 App Store 高意图搜索与品牌防守</td><td>关键词 × 广告组 × 对应 Custom Product Page</td><td>Exact 与 Broad 分组；品牌、Duo、主题、Widget 意图分离</td><td>每周查搜索词与否定词；按国家单独调 CPA</td><td>平台口径 TTR、CR、CPA、Impressions、Spend</td><td>搜索词与能力不符，或 CPA 过线且 D7 付费质量未改善</td></tr>
+              <tr><th scope="row">App Store 自然转化</th><td>把外部流量和搜索意图转成下载、试用与付费</td><td>默认页、Custom Product Page、Product Page Optimization</td><td>PPO 一次最多 3 个 treatment；图标、截图或预览视频单变量</td><td>达到计划样本后读结果；官方建议至少 90% confidence 再应用胜出项</td><td>Impressions、Product Page Views、CVR、Download-to-Paid</td><td>外部流量结构已变化、实验互相污染或胜出概率不足</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="copy-system" aria-labelledby="copy-system-title">
+          <h3 id="copy-system-title">素材复制系统</h3>
+          <p class="formula">Hook × Audience × Scene × Proof × CTA × Format</p>
+          <p><strong>命名规则：</strong><code>US_TT_DUO_VISUAL_T0_H03_V02_15S</code> = 国家、渠道、场景、钩子类型、阶段、钩子号、版本、时长。</p>
+          <div class="table-wrap">
+            <table>
+              <caption>从胜出概念到下一批素材的复制规则</caption>
+              <thead><tr><th scope="col">规则</th><th scope="col">执行口径</th><th scope="col">记录</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">单变量迭代</th><td>每轮只替换首帧、受众、证明、CTA 或格式之一，其余保持一致。</td><td>记录母版、变量和假设。</td></tr>
+                <tr><th scope="row">最小素材批次</th><td>每个新概念 3 个首帧 × 2 个 CTA，至少 6 条；同一批次保持时长和承接页一致。</td><td>发布前完成命名与授权。</td></tr>
+                <tr><th scope="row">疲劳刷新条件</th><td>同分组频次上升且 3 天滚动停留率或 CTR 相对四周中位数跌 20%，先换首帧。</td><td>保留原素材作为对照。</td></tr>
+                <tr><th scope="row">周复盘流程</th><td>周一锁定假设，周三查样本与链路，周五按下游付费质量判定放量、续测或停止。</td><td>只给每个症状一个下一步动作。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <p class="source-note">平台规则来自 Meta、Google、Apple Ads 与 App Store 官方资料；投放节奏和批次数属于团队首轮操作假设。</p>
+      </section>
+
+      <section id="benchmarks" data-view-group="社媒 买量" aria-labelledby="benchmarks-title">
+        <div class="section-heading">
+          <p class="section-index">04 · 对表与止损</p>
+          <h2 id="benchmarks-title">首轮操作线与漏斗决策</h2>
+          <p><strong>重要：</strong>以下所有数字都是无内部数据时的冷启动操作假设，非行业统一基准。上线满 14 天后，按渠道 + 国家 + 版位 + 素材时长 + 归因窗口分组，以团队四周中位数替换。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>订阅增长与社媒内容首轮操作线</caption>
+            <thead><tr><th scope="col">指标</th><th scope="col">定义与数据源</th><th scope="col">首轮操作线</th><th scope="col">预警线</th><th scope="col">团队四周基线</th><th scope="col">动作</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">买量 2 秒停留率</th><td>2 秒观看 / 视频播放，按平台同版位口径</td><td>≥30%</td><td data-threshold="<20%">低于 20%</td><td>录入同分组四周中位数</td><td>未达线只换首帧与前两秒。</td></tr>
+              <tr><th scope="row">Link CTR</th><td>链接点击 / 展示，广告平台</td><td>≥1.2%</td><td data-threshold="<0.8%">低于 0.8%</td><td>录入同分组四周中位数</td><td>停留达标时重写价值主张与 CTA。</td></tr>
+              <tr><th scope="row">商店页 CVR</th><td>首次下载 / 产品页浏览，App Store Connect</td><td>≥35%</td><td data-threshold="<25%">低于 25%</td><td>录入同分组四周中位数</td><td>校准素材、关键词与商店页首屏。</td></tr>
+              <tr><th scope="row">安装→试用</th><td>开始试用 / 首次打开，内部订阅事件</td><td>≥12%</td><td data-threshold="<8%">低于 8%</td><td>录入同分组四周中位数</td><td>检查首启价值、内容可用性与付费墙时机。</td></tr>
+              <tr><th scope="row">试用→付费</th><td>首个成功付费 / 到期试用，订阅数据</td><td>≥35%</td><td data-threshold="<25%">低于 25%</td><td>录入同分组四周中位数</td><td>检查价格、承诺、取消预期与持续内容。</td></tr>
+              <tr><th scope="row">D7 Download-to-Paid</th><td>下载后 7 天内付费 / 首次下载，cohort</td><td>≥5%</td><td data-threshold="<3%">低于 3%</td><td>录入同分组四周中位数</td><td>限制放量并定位试用与付费流失。</td></tr>
+              <tr><th scope="row">Paid CAC</th><td>广告花费 / 归因付费用户，MMP 与订阅回传</td><td>≤ D35 单付费用户净收入 80%</td><td data-threshold=">100%">高于 D35 净收入 100%</td><td>录入同分组四周中位数</td><td>超过预警线暂停，校验价值回传和归因。</td></tr>
+              <tr><th scope="row">社媒 3 秒停留</th><td>3 秒观看 / 播放，平台自然内容</td><td>≥35%</td><td data-threshold="<25%">低于 25%</td><td>录入同分组四周中位数</td><td>更换首帧、动作起点与字幕开场。</td></tr>
+              <tr><th scope="row">15–30 秒完播</th><td>完整观看 / 播放，同素材时长</td><td>≥18%</td><td data-threshold="<10%">低于 10%</td><td>录入同分组四周中位数</td><td>删减铺垫，把结果前置。</td></tr>
+              <tr><th scope="row">分享+收藏 / 播放</th><td>分享与收藏之和 / 播放，平台自然内容</td><td>≥3%</td><td data-threshold="<1.5%">低于 1.5%</td><td>录入同分组四周中位数</td><td>增加清单、模板或可复用结果。</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="decision-grid">
+          <section aria-labelledby="funnel-decision-title">
+            <h3 id="funnel-decision-title">漏斗症状 → 唯一动作</h3>
+            <div class="table-wrap">
+              <table>
+                <caption>按最早失效环节选择下一步</caption>
+                <thead><tr><th scope="col">漏斗症状</th><th scope="col">唯一动作</th><th scope="col">本轮不做</th></tr></thead>
+                <tbody>
+                  <tr><td>停留差</td><td>换首帧与前两秒</td><td>不先改商店页</td></tr>
+                  <tr><td>停留好、点击差</td><td>重写价值主张与 CTA</td><td>不扩大受众</td></tr>
+                  <tr><td>点击好、安装差</td><td>校准素材与商店页</td><td>不先改付费墙</td></tr>
+                  <tr><td>安装好、试用差</td><td>修正首启与付费墙时机</td><td>不提高预算</td></tr>
+                  <tr><td>试用好、付费差</td><td>检查价格、试用与持续价值</td><td>不以点击率判胜</td></tr>
+                  <tr><td>全链路达线</td><td>预算每次小步增加并观察下游质量</td><td>不一次翻倍</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p><strong>样本门槛：</strong>素材至少获得 3,000 次有效展示再判断停留与 CTR；商店页至少 200 次产品页浏览再判断 CVR；试用与付费至少等待完整归因和试用窗口。无论上游指标如何，单素材消耗达到目标 Paid CAC 的 1.5 倍仍无付费，立即暂停并记录失败变量。</p>
+          </section>
+
+          <section class="economics-card" aria-labelledby="economics-title">
+            <h3 id="economics-title">本地订阅经济模型</h3>
+            <form id="economics-form" aria-labelledby="economics-title">
+              <div>
+                <label for="currency">币种（三项统一）</label>
+                <select id="currency" name="currency">
+                  <option value="USD">USD · 美元</option>
+                  <option value="EUR">EUR · 欧元</option>
+                  <option value="GBP">GBP · 英镑</option>
+                  <option value="JPY">JPY · 日元</option>
+                  <option value="CAD">CAD · 加拿大元</option>
+                  <option value="AUD">AUD · 澳大利亚元</option>
+                </select>
+              </div>
+              <div><label for="spend">广告花费</label><input id="spend" name="spend" type="number" min="0" step="0.01" inputmode="decimal"></div>
+              <div><label for="paid">归因付费人数</label><input id="paid" name="paid" type="number" min="0" step="1" inputmode="numeric"></div>
+              <div><label for="proceeds">净收入</label><input id="proceeds" name="proceeds" type="number" min="0" step="0.01" inputmode="decimal"></div>
+              <button type="submit">计算</button>
+            </form>
+            <output id="economics-output" for="spend paid proceeds" aria-live="polite">输入花费、付费人数和净收入后计算 Paid CAC、ROAS 与贡献额。</output>
+            <p>计算只在浏览器本地完成；三个金额口径必须使用所选币种，净收入不得用含税销售额替代。</p>
+          </section>
+        </div>
+        <p class="source-note">指标定义优先采用各平台官方口径；所有阈值均为运营假设，不得写入对外宣传或包装成行业标准。</p>
+      </section>
+
+      <section id="scenarios" data-view-group="社媒 买量 内容" aria-labelledby="scenarios-title">
+        <div class="section-heading">
+          <p class="section-index">05 · 从需求到订阅</p>
+          <h2 id="scenarios-title">应用场景</h2>
+          <p>每个场景都从用户情绪进入，以真实预览或教程承接，并把订阅价值落到持续内容供给。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>九个可生产、可承接、可审核的运营场景</caption>
+            <thead><tr><th scope="col">应用场景</th><th scope="col">目标用户</th><th scope="col">核心情绪</th><th scope="col">推荐钩子</th><th scope="col">承接</th><th scope="col">订阅价值</th><th scope="col">可用事实</th><th scope="col">禁区</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Duo 展开 / 合上连续主题</th><td>首发购机与折叠屏审美用户</td><td>两种形态仍属于同一个我</td><td>一开一合的视觉反差</td><td>Duo 主题详情页与双形态预览</td><td>持续新增成套素材</td><td>内外屏采用相同宽高比</td><td>不能承诺一键设置内外屏壁纸组合</td></tr>
+              <tr><th scope="row">内外屏双画布预览</th><td>重视构图与裁切的用户</td><td>设置前先确认效果</td><td>结果前置的教程</td><td>两块画布并排预览与素材下载</td><td>不同风格和构图持续上新</td><td>5.4 英寸外屏、7.6 英寸内屏</td><td>预览不等于系统直接应用</td></tr>
+              <tr><th scope="row">StandBy</th><td>床头、书桌与厨房场景用户</td><td>充电时也保持好看</td><td>空间改造前后对比</td><td>StandBy 搭配合集</td><td>季节与场景持续更新</td><td>Apple 已确认 StandBy</td><td>不承诺控制 Always On 或系统布局</td></tr>
+              <tr><th scope="row">锁屏组件组合</th><td>效率与审美兼顾的用户</td><td>信息不再破坏风格</td><td>痛点修复与模板效率</td><td>组件组合预览及分步安装指导</td><td>更多组件样式与搭配方案</td><td>WidgetKit 支持的已验收能力</td><td>不承诺任意摆放、尺寸或交互</td></tr>
+              <tr><th scope="row">Liquid Glass 主题</th><td>追新系统视觉的用户</td><td>手机看起来刚刚更新</td><td>系统新鲜感</td><td>Liquid Glass 风格主题合集</td><td>持续适配系统视觉趋势</td><td>iOS 27 的系统设计语言</td><td>不声称修改系统材质</td></tr>
+              <tr><th scope="row">动态效果预览</th><td>偏爱动效和沉浸感的用户</td><td>静态截图之外的惊喜</td><td>首秒动态反差</td><td>App 内动态预览与兼容说明</td><td>更多动态素材与更新</td><td>仅展示已在 App 内实现的效果</td><td>不能承诺为两块屏幕独立设置动态系统壁纸</td></tr>
+              <tr><th scope="row">节日主题包</th><td>需要短期换肤和分享的用户</td><td>不错过节日氛围</td><td>节点与收藏价值</td><td>节日主题包详情页</td><td>全年节点日历和定期上新</td><td>真实上线日期与素材数量</td><td>不制造虚假倒计时或稀缺</td></tr>
+              <tr><th scope="row">创作者模板</th><td>追随创作者审美的用户</td><td>可信的人已经搭好</td><td>创作者证明</td><td>带署名的模板详情页</td><td>持续扩展授权创作者库</td><td>真实授权、署名和使用过程</td><td>不伪造评价、身份或授权</td></tr>
+              <tr><th scope="row">新机迁移</th><td>从旧 iPhone 换到 Duo 的用户</td><td>保留熟悉感又有新鲜感</td><td>迁移清单与教程结果</td><td>收藏恢复、素材重下与安装指南</td><td>跨设备收藏与持续可取用内容</td><td>仅使用产品已验收的账户与下载能力</td><td>不承诺迁移系统设置或绕过系统步骤</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="source-note">硬件与系统描述属于官方事实；承接页、订阅权益和迁移路径须由产品与研发按上线版本验收。</p>
+      </section>
+
+      <section id="requirements" data-view-group="跨团队需求" aria-labelledby="requirements-title">
+        <div class="section-heading">
+          <p class="section-index">06 · 交付与验收</p>
+          <h2 id="requirements-title">跨团队运营需求</h2>
+          <p>每项需求都有可交付物与验收标准；P0 阻断首发链路，P1 影响规模化与复盘质量。</p>
+        </div>
+        <div class="table-wrap requirements-table">
+          <table>
+            <caption>产品、设计、研发、数据与合规的首发运营需求</caption>
+            <thead><tr><th scope="col">优先级</th><th scope="col">责任团队</th><th scope="col">运营需求</th><th scope="col">交付物</th><th scope="col">验收标准</th><th scope="col">依赖</th><th scope="col">最晚时间</th><th scope="col">操作</th></tr></thead>
+            <tbody>
+              <tr class="requirement-row" data-team="产品"><td>P0</td><td>产品</td><th scope="row">每个主题拥有可独立 deep link 的详情页</th><td>链接规则与 Duo 首发主题页</td><td>冷启动、已安装、未登录三种状态均到正确主题</td><td>研发 deep link</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：每个主题拥有可独立 deep link 的详情页">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="产品"><td>P0</td><td>产品</td><th scope="row">冻结试用资格、周期和取消说明</th><td>试用策略表与用户文案</td><td>广告、商店页、付费墙和系统购买页口径一致</td><td>合规复核</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：冻结试用资格、周期和取消说明">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="产品"><td>P1</td><td>产品</td><th scope="row">定义价格实验及互斥人群</th><td>价格实验矩阵</td><td>版本、国家、样本、主指标和停止条件齐全</td><td>数据分流</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：定义价格实验及互斥人群">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="产品"><td>P1</td><td>产品</td><th scope="row">给出订阅内容更新节奏</th><td>八周主题上新日历</td><td>每周数量、风格、版权状态和负责人明确</td><td>设计产能</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：给出订阅内容更新节奏">复制需求</button></td></tr>
+
+              <tr class="requirement-row" data-team="设计"><td>P0</td><td>设计</td><th scope="row">交付有声 9:16 原生短视频及安全区模板</th><td>15 秒与 30 秒母版</td><td>关键信息、字幕和 CTA 在 Meta / TikTok 安全区内</td><td>脚本与真机录屏</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：交付有声 9:16 原生短视频及安全区模板">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="设计"><td>P1</td><td>设计</td><th scope="row">补齐 1:1 / 4:5 / 1.91:1 图片版位</th><td>同概念多版位导出包</td><td>主体、文字和 CTA 不被裁切，命名可追踪</td><td>品牌模板</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：补齐 1:1 / 4:5 / 1.91:1 图片版位">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="设计"><td>P0</td><td>设计</td><th scope="row">建立 Duo 双画布和构图安全区</th><td>外屏、内屏并排母版</td><td>基于官方尺寸，预览不暗示系统一键应用</td><td>Duo 官方规格</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：建立 Duo 双画布和构图安全区">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="设计"><td>P0</td><td>设计</td><th scope="row">准备 App Store 截图、预览视频和 PPO 变体</th><td>默认页与 3 个 treatment 资产</td><td>首屏主张对应承接内容，尺寸与元数据合规</td><td>产品页文案</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：准备 App Store 截图、预览视频和 PPO 变体">复制需求</button></td></tr>
+
+              <tr class="requirement-row" data-team="研发"><td>P0</td><td>研发</td><th scope="row">实现 Universal Link / deep link 并保留 campaign 参数</th><td>链接路由与参数表</td><td>来源、campaign、素材和承接页参数跨安装链路可验证</td><td>产品路由</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：实现 Universal Link / deep link 并保留 campaign 参数">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="研发"><td>P0</td><td>研发</td><th scope="row">补齐订阅事件与失败原因</th><td>试用、购买、续订、退款事件</td><td>去重、时间戳、价格、币种和订阅产品标识完整</td><td>统一事件字典</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：补齐订阅事件与失败原因">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="研发"><td>P0</td><td>研发</td><th scope="row">支持付费墙版本和来源映射</th><td>付费墙版本字段与回退逻辑</td><td>每次曝光、关闭、试用和付费可关联同一版本</td><td>产品价格实验</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：支持付费墙版本和来源映射">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="研发"><td>P0</td><td>研发</td><th scope="row">完成 Duo 真机边界与第三方能力验证</th><td>Duo 真机边界报告</td><td>双画布预览、下载、安装步骤、StandBy 与动态效果逐项录屏</td><td>真机与正式系统</td><td>T-3</td><td><button type="button" data-copy-requirement aria-label="复制需求：完成 Duo 真机边界与第三方能力验证">复制需求</button></td></tr>
+
+              <tr class="requirement-row" data-team="数据"><td>P0</td><td>数据</td><th scope="row">冻结从曝光到订阅的统一事件字典</th><td>事件、属性、触发与去重文档</td><td>客户端、广告平台、MMP 和订阅后台字段可映射</td><td>研发订阅事件</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：冻结从曝光到订阅的统一事件字典">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="数据"><td>P0</td><td>数据</td><th scope="row">提供国家 / 渠道 / 素材 / 商店页 / 付费墙维度</th><td>增长明细表与看板筛选</td><td>同一付费可追溯到完整维度且无敏感个人数据</td><td>campaign 参数</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：提供国家 / 渠道 / 素材 / 商店页 / 付费墙维度">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="数据"><td>P1</td><td>数据</td><th scope="row">建立 D1 / D7 / D35 cohort</th><td>按首次下载日的订阅 cohort</td><td>可查看试用、付费、续订、退款和留存，口径说明就近</td><td>订阅数据</td><td>T+3</td><td><button type="button" data-copy-requirement aria-label="复制需求：建立 D1 / D7 / D35 cohort">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="数据"><td>P0</td><td>数据</td><th scope="row">完成净收入回传与币种归一</th><td>广告优化回传和财务对账表</td><td>扣除平台分成、税费和退款，回传延迟可见</td><td>财务与 MMP</td><td>T-3</td><td><button type="button" data-copy-requirement aria-label="复制需求：完成净收入回传与币种归一">复制需求</button></td></tr>
+
+              <tr class="requirement-row" data-team="合规"><td>P0</td><td>合规</td><th scope="row">核查壁纸、音乐、字体和设备图版权</th><td>版权台账与允许渠道</td><td>每项素材有来源、地区、期限和付费投放权</td><td>内容资产清单</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：核查壁纸、音乐、字体和设备图版权">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="合规"><td>P0</td><td>合规</td><th scope="row">完成创作者授权和广告使用许可</th><td>创作者授权模板与签署记录</td><td>署名、剪辑、付费投放、地区和期限明确</td><td>创作者名单</td><td>T-14</td><td><button type="button" data-copy-requirement aria-label="复制需求：完成创作者授权和广告使用许可">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="合规"><td>P1</td><td>合规</td><th scope="row">确定 AI label 与生成素材留档规则</th><td>AI label 检查清单</td><td>按投放平台与地区要求标识，生成记录可追溯</td><td>平台政策</td><td>T-7</td><td><button type="button" data-copy-requirement aria-label="复制需求：确定 AI label 与生成素材留档规则">复制需求</button></td></tr>
+              <tr class="requirement-row" data-team="合规"><td>P0</td><td>合规</td><th scope="row">复核准确元数据与第三方 App 能力声明</th><td>商店页与广告能力声明清单</td><td>不得承诺一键设置双屏、独立动态壁纸或未验证系统能力</td><td>研发边界报告</td><td>T-3</td><td><button type="button" data-copy-requirement aria-label="复制需求：复核准确元数据与第三方 App 能力声明">复制需求</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sources" aria-labelledby="sources-title">
+        <div class="section-heading">
+          <p class="section-index">07 · 第一方依据</p>
+          <h2 id="sources-title">官方来源</h2>
+          <p>产品事实、商店页实验、订阅分析、Widget、广告指标与素材建议均回到平台第一方资料。</p>
+        </div>
+        <div class="source-groups">
+          <section aria-labelledby="source-apple-product"><h3 id="source-apple-product">Apple 产品与商店页</h3><ul>
+            <li><a href="https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/" target="_blank" rel="noopener noreferrer">Apple Newsroom：iPhone Duo 发布信息</a></li>
+            <li><a href="https://developer.apple.com/app-store/product-page-optimization/" target="_blank" rel="noopener noreferrer">Product Page Optimization</a></li>
+            <li><a href="https://developer.apple.com/app-store/asset-best-practices/" target="_blank" rel="noopener noreferrer">App Store 素材最佳实践</a></li>
+          </ul></section>
+          <section aria-labelledby="source-analytics"><h3 id="source-analytics">分析与订阅</h3><ul>
+            <li><a href="https://developer.apple.com/help/app-store-connect-analytics/" target="_blank" rel="noopener noreferrer">App Store Connect Analytics</a></li>
+            <li><a href="https://developer.apple.com/help/app-store-connect-analytics/monetization/subscriptions" target="_blank" rel="noopener noreferrer">订阅分析</a></li>
+            <li><a href="https://developer.apple.com/help/app-store-connect-analytics/monetization/cohorts" target="_blank" rel="noopener noreferrer">订阅 Cohorts</a></li>
+          </ul></section>
+          <section aria-labelledby="source-widgets"><h3 id="source-widgets">组件与设计</h3><ul>
+            <li><a href="https://developer.apple.com/documentation/widgetkit" target="_blank" rel="noopener noreferrer">WidgetKit 文档</a></li>
+            <li><a href="https://developer.apple.com/design/human-interface-guidelines/widgets" target="_blank" rel="noopener noreferrer">Widgets 人机界面指南</a></li>
+          </ul></section>
+          <section aria-labelledby="source-acquisition"><h3 id="source-acquisition">广告与素材</h3><ul>
+            <li><a href="https://ads.apple.com/app-store/help/reporting/0024-view-campaigns-dashboard-metrics" target="_blank" rel="noopener noreferrer">Apple Ads Campaigns dashboard metrics</a></li>
+            <li><a href="https://www.facebook.com/business/ads/facebook-instagram-reels-ads" target="_blank" rel="noopener noreferrer">Meta Reels Ads</a></li>
+            <li><a href="https://ads.tiktok.com/business/library/Global_SMB_Creative_Playbook.pdf" target="_blank" rel="noopener noreferrer">TikTok Creative Playbook</a></li>
+            <li><a href="https://support.google.com/google-ads/answer/6167158?hl=en" target="_blank" rel="noopener noreferrer">Google App Campaigns 资产最佳实践</a></li>
+            <li><a href="https://support.google.com/google-ads/answer/6167162?hl=en" target="_blank" rel="noopener noreferrer">Google App Campaigns 资产规格</a></li>
+          </ul></section>
+        </div>
+        <p class="source-note"><strong>证据状态：</strong>来源明确写出的信息为官方事实；页面阈值和创意模板为运营假设；未在公开资料确认的设置与真机行为为研发待验证。</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>内部运营工作文档 · 公开传播前复核日期、平台政策、版权与产品能力。</p>
+  </footer>
+  <script type="module" src="operations.mjs"></script>
+</body>
+</html>
